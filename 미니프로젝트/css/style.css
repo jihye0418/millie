@@ -1,0 +1,1420 @@
+@charset "utf-8";
+
+/* 스킵메뉴 */
+#skip > a {
+  position: absolute; 
+  left: 0; 
+  top: -80px; 
+  line-height: 65px;
+  border: 1px solid #fff; 
+  color: #fff; 
+  background: linear-gradient(299.06deg, #FFEB60 -12.18%, #A451F7 128.23%);
+  width: 350px;
+  text-align: center;
+  z-index: 2;
+}
+
+#skip a:active,
+#skip a:focus {
+  top: 0;
+}
+
+/* ======================
+          header 
+========================*/
+#header{
+  text-align: center;
+  line-height: 50px;
+  padding: 16px 0;
+  position: relative;
+  z-index: 10;
+}
+
+#header .container{
+  position: relative; 
+  background: #fff;
+  height: 54px;
+}
+
+/* 로고 */
+h1{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+h1 a{
+  display: inline-block;
+  width: 100px;
+}
+
+h1 img{
+  width: 100%;
+}
+
+/* 메인 메뉴 */
+.main-nav li{
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+  line-height: 30px;
+  position: relative;
+}
+
+.main-nav li:last-child{
+  margin-right: 0;
+}
+
+.main-nav li a{
+  display: block;
+}
+
+.main-nav li:after{
+  content:'';
+  display: block;
+  width: 0;
+  height: 3px;
+  border-radius: 10px;
+  background: #A451F7;
+  transition: width .3s;
+}
+
+.main-nav li:hover:after{
+  width: 100%;
+  transition: width .3s;
+}
+
+.main-nav li.search_btn{
+  font-size: 16px;
+
+}
+
+/* 서브메뉴 */
+.sub-nav{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sub-nav li{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+
+/* 검색창 */
+header form{
+  position: absolute;
+  left: 0;
+  right: 0; /* 전체넓이쓰기 */
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 5px 5px rgba(0,0,0,.1);
+  background: #fff;
+  top: 0;
+  z-index: -1;
+  transition: .5s;
+}
+
+header form input[type="text"]{
+  height: 40px;
+  border-bottom: 1px solid #222;
+  width: 540px;
+  display: inline-block;
+  margin-right: 10px;
+  outline: none;
+}
+
+header form input[type="text"]:focus{
+  border-bottom: 2px solid #A451F7;
+}
+
+input[type="submit"]{
+  font-family: FontAwesome;
+  display: inline-block;
+  border: none;
+  vertical-align: bottom;
+  padding: 5px;
+  font-size: 28px;
+  background: none;
+  cursor: pointer;
+  margin-left: -20px;
+  margin-bottom: 5px;
+}
+
+input[type="submit"]:hover{
+  color: #A451F7;
+}
+
+header form.active{
+  top:100%;
+}
+
+
+
+
+/* 모바일 헤더 */
+.toggle{display: none;}
+
+
+/* ======================
+          슬라이드 
+========================*/
+.main-slider{
+  width: 100%;
+  height: 550px;
+}
+
+.main-slider .ss1{
+  background: url('../img/main-bg1.jpg') no-repeat right center;
+  background-size: cover;
+}
+
+.main-slider .ss2{
+  background: url('../img/main-bg2.jpg') no-repeat right center;
+  background-size: cover;
+}
+
+.main-slider .ss3{
+  background: url('../img/main-bg3.jpg') no-repeat right center;
+  background-size: cover;
+}
+
+.swiper-slide .main-txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  transition: 1s;
+  text-align: center;
+  background: rgba(255,255,255,.3);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.swiper-slide .main-txt h2{
+  font-size: 35px;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+.swiper-slide .main-txt p{
+  font-size: 18px;
+  margin: 20px 0 30px;
+  word-break: keep-all;
+}
+
+.swiper-slide .main-txt a{
+  padding: 10px 20px;
+  background: #b775f8;
+  color: #fff;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.swiper-slide .main-txt a:hover{
+  background:#A451F7;
+  color: #ffc004;
+  font-weight: 500;
+}
+
+
+.swiper-slide.swiper-slide-active .main-txt{
+  opacity: 1;
+}
+
+
+/* ======================
+      오늘의 추천 도서 
+========================*/
+.today-book-wrap{
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+/* 왼쪽부분 틀 */
+.today-book-wrap .today-s-wrap{
+  float: left;
+  width: calc(100% - 750px);
+  height: 500px;
+  background: url("../img/rain-bg.jpg");
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.today-book-wrap .today-s-wrap a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #fff;
+}
+
+/* 텍스트들 */
+.today-book-wrap .today-txt{
+  position: absolute;
+  bottom: 8%;
+  left: 30px;
+}
+
+.today-book-wrap .today-txt p{
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.today-book-wrap .today-txt h2{
+  font-size: 38px;
+  font-weight: 500;
+  color: #ffc004;
+  line-height: 1.75;
+}
+
+
+/* 탭메뉴 */
+.today-tab-wrap{
+  float: right;
+  width: 750px;
+  height: 500px;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+
+.today-tab ul {
+  padding: 10px 0 10px 0;
+}
+
+.today-tab ul li{
+  display: inline-block;
+  padding: 0 14px;
+  position: relative;
+}
+
+.today-tab ul li:first-child{
+  padding-left: 0;
+}
+
+.today-tab ul li:after{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  width: 1px;
+  height: 15px;
+  background: #222;
+}
+
+.today-tab ul li:last-child:after{
+  display: none;
+}
+
+.today-tab ul li.on a{
+  color: #A451F7;
+}
+
+.list2{
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* 오늘의 추천 도서 목록 */
+.today-book-list .t_book-wrap{
+  margin: 10px 0;
+}
+
+.today-book-list .t_book{
+  width: 23%;
+  height: 210px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.today-book-list .t_book:nth-child(4n){
+  margin-right: 0;
+}
+
+.today-book-list .t_book img{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+}
+
+.today-book-list .t_book:nth-child(4n){
+  margin-right: 0;
+}
+
+.today-book-list .t_book > a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ======================
+    베스트 & 에디터 추천
+========================*/
+.lank_reco{
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+/* 실시간 베스트 셀러 */
+.lank_reco .lank{
+  width:696px;
+  float: left;
+  position: relative;
+}
+
+.lank .lank-tit h2{
+  font-size: 26px;
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.lank .lank-tit p{
+  font-size: 13px;
+  color: #8e8e8e;
+}
+
+.lank .lank-tab-tit{
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+
+.lank .lank-tab-tit ul li{
+  display: inline-block;
+  padding: 0 14px;
+  position: relative;
+}
+
+.lank .lank-tab-tit ul li.on a{
+  color: #A451F7;
+}
+
+.lank .lank-tab-tit ul li:first-child{
+  padding-left: 0;
+}
+
+.lank .lank-tab-tit ul li:last-child{
+  padding-right: 0;
+}
+
+.lank .lank-tab-tit ul li:after{
+  content:'';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background: #222;
+  top:6px;
+  right: -4px;
+}
+
+.lank .lank-tab-tit ul li:last-child:after{
+  display: none;
+}
+
+/* 순위 */
+.lank-tab{
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 14px;
+  width: 100%;
+}
+
+.lank-tab th{
+  border-top: 1px solid #ccc;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+.lank-tab th,
+.lank-tab tr{
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.lank-tab tr:last-child{
+  border-bottom: none;
+}
+
+.langking{
+  height: 96px;
+}
+
+.langking:hover{
+  background: #ffc004;
+}
+
+.langking .lank-up_down em{
+  text-indent: -9999px;
+  background: #9c9a9a;
+  height: 2px;
+  width: 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 순위 변동 */
+.langking .lank-down{
+  overflow: hidden;
+}
+
+.langking .lank-down em,
+.langking .lank-up em{
+  border-width: 5px;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 순위 하락 */
+.langking .lank-down em{
+  border-color: blue transparent transparent transparent;
+}
+
+.langking .lank-down span{
+  color: blue;
+  vertical-align: middle;
+}
+
+/* 순위 상승 */
+.langking .lank-up em{
+  border-color: transparent transparent red  transparent ;
+}
+
+.langking .lank-up span{
+  color: red;
+  vertical-align: middle;
+}
+
+/* 순위 내용 */
+.langking .lank-book{
+  overflow: hidden;
+}
+
+.lank-book .lank-book-img{
+  width: 50px;
+  float: left;
+  margin: 0 20px 0 15px;
+}
+
+.lank-book .lank-book-img img{
+  width: 100%;
+}
+
+.lank-book .lank-book-tit{
+  float: left;
+  margin-top: 28px;
+  font-size: 14px;
+}
+
+.lank-book-writer a{
+  text-align: center;
+  font-size: 14px;
+}
+
+/* 찜하기 버튼 */
+.langking .hold{
+  border-radius: 10px;
+  color: #A451F7;
+  border: 1px solid #A451F7;
+  background: #fff;
+  padding: 5px 12px;
+}
+
+.langking .read{
+  border-radius: 10px;
+  padding: 5px 22px;
+  background: #A451F7;
+  color: #fff;
+  font-size: 14px;
+}
+
+.langking .read:hover{
+  background: #b775f8;
+  cursor: pointer;
+}
+
+.langking .hold:hover{
+  background: #A451F7;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ======================
+    에디터 추천
+========================*/
+.lank_reco .editor{
+  width:calc(100% - 740px);
+  float: right;
+}
+
+.editor h2{
+  font-size: 26px;
+  margin-bottom: 2px;
+}
+
+.editor p{
+  font-size: 13px;
+  color: #8e8e8e;
+}
+
+/* 목록 */
+.editor .editor-wrap{
+  box-sizing: border-box;
+  margin-top: 10px;
+  width: 100%;
+  height: 118px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.editor1{
+  background:url("../img/editor1.jpg") right 30%;
+  background-size: cover;
+}
+
+.editor2{
+  background:url("../img/editor2.jpg") right 30%;
+  background-size: cover;
+}
+
+.editor3{
+  background:url("../img/editor3.jpg") right 20%;
+  background-size: cover;
+}
+
+.editor4{
+  background:url("../img/editor4.jpg") right 15%;
+  background-size: cover;
+}
+
+.editor .editor-wrap a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.editor-wrap .editor-record{
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+
+.editor-wrap .editor-record h4{
+  font-size: 18px;
+  color: #222;
+}
+
+
+
+/* ======================
+      보고 듣는 신작
+========================*/
+.new-look_listen{
+  position: relative;
+}
+
+.new-look_listen h2{
+  font-size: 26px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+/* 탭 타이틀 */
+.new-look_listen .look-tit{
+  margin: 10px 0 20px 0;
+  position: absolute;
+  top: 0;
+  left: 220px;
+}
+
+.new-look_listen .look-tit li{
+  display: inline-block;
+  padding: 0 14px;
+  position: relative;
+}
+
+.new-look_listen .look-tit li.on a{
+  color: #A451F7;
+}
+
+.new-look_listen .look-tit li:first-child{
+  padding-left: 0;
+}
+
+.new-look_listen .look-tit li:after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 12px;
+  background: #222;
+  top: 6px;
+  right: -4px;
+}
+
+.new-look_listen .look-tit li:last-child:after{
+  display: none;
+}
+
+/* 챗북 신작 */
+.look_listen-wrap{
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-look{
+  width: 1600px;
+}
+
+.new-look .new-book-cont{
+  width: 300px;
+  height: 140px;
+  border-radius: 10px;
+  position: relative;
+  background: #Fff;
+  margin-right: 10px;
+  border: 1px solid #ffc004;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.new-look .new-book-cont a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.new-book-cont .new-poster{
+  width: 80px;
+  position: absolute;
+  top: 10px;
+  left: 24px;
+}
+
+.new-book-cont .new-poster img{
+  width: 100%;
+}
+
+.new-book-cont .new-txt{
+  width: 252px;
+  margin-left: 142px;
+  margin-top: 10px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.new-book-cont .new-txt h5{
+  font-size: 17px;
+  line-height: 1.15;
+  color: #A451F7;
+}
+
+.new-book-cont .new-txt h6{
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+
+/* ======================
+      태그로 즐기는 책
+========================*/
+.tag{
+  margin-top: 80px;
+}
+
+.tag h2{
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+/* 태그 목록들 */
+
+.tag-wrap{
+  overflow: hidden;
+}
+
+.tag-wrap .tags{
+  width: 31.5%;
+  margin-right: 2.4%;
+  float: left;
+  border-radius: 10px;
+}
+
+.tag-wrap .tags:nth-child(3n){
+  margin-right: 0;
+}
+
+/* 태그 관련 책 이미지 */
+.tags .tags-top{
+  width: 100%;
+  background: #A451F7;
+  text-align: center;
+  padding: 50px 0;
+  border-radius: 10px 10px 0 0;
+}
+
+.tags .tags-top ul li{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  margin-left: -50px;
+  overflow: hidden;
+}
+
+.tags .tags-top ul li:first-child{
+  margin-left: 0;
+}
+
+/* 태그 이미지 */
+.tags .tags-top ul li img{
+  width: 100%;
+}
+
+.tags-bottom{
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* 태그 추천 제목 */
+.tags-title{
+  font-size: 18px;
+  letter-spacing: -1px;
+  overflow: hidden; 
+  text-overflow: ellipsis;/* 텍스트가 2줄이 되면 줄여주는 효과 */ 
+  white-space: nowrap;/* 텍스트 2줄을 1줄로 */ 
+}
+
+.long-tit{
+  /* 여러 줄일 때 말줄임표 */
+  line-height: 1.15;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: normal; 
+  word-wrap: break-word; 
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}
+
+.tags-writer{
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.tags-writer a{
+  color: #A451F7;
+}
+
+.tags-date{
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* 태그들 */
+.tags-list ul li{
+  display: inline-block;
+  margin: 6px 6px 6px 0;
+}
+
+.tags-list ul li a{
+  border-radius: 10px;
+  border: 1px solid rgb(175, 175, 175);
+  display: inline;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.tags-list ul li a:hover{
+  border: 1px solid #A451F7;
+}
+
+
+/* 두번째줄 태그 추천 */
+.tag_two{
+  margin-top: 25px;
+}
+
+
+
+/* ======================
+            푸터
+========================*/
+.footer-top{
+  text-align: center;
+  margin-top: 100px;
+}
+
+.footer-logo{
+  width: 150px;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.footer-logo img{
+  width: 100%;
+}
+
+/* 푸터 메뉴 */
+.footer-menu ul li{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.footer-menu ul li:first-child{
+  margin-left: 0;
+}
+
+.footer-menu ul li a{
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.footer-menu ul li a:hover{
+  border: 1px solid #A451F7
+}
+
+/* 푸터 정보(footer-bottom) */
+.footer-bottom{
+  margin: 60px 0 30px;
+}
+
+.footer-bottom p{
+  font-size: 18px;
+}
+
+.footer-bottom span{
+  color: #999999;
+  font-size: 14px;
+}
+
+
+/* 푸터 bottom의 bottom */
+.footer-bottom{
+  overflow: hidden;
+}
+
+.footer-bottom-top{
+  float: left;
+}
+
+.footer-bottom-bottom {
+  margin-top: 20px;
+}
+
+.footer-bottom-bottom ul li{
+  color: #999999;
+  font-size: 13px;
+}
+
+.footer-bottom-menu{
+  float: right;
+}
+
+.footer-bottom-menu ul li{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer-bottom-menu ul li:first-child{
+  margin-left: 0;
+}
+
+
+.footer-bottom-menu ul li{
+  position: relative;
+}
+
+.footer-bottom-menu ul li a:after{
+  content:'';
+  display: block;
+  position: absolute;
+  top: 4px;
+  right: -13px;
+  width: 1px;
+  height: 15px;
+  background: #222;
+}
+
+.footer-bottom-menu ul li:last-child a:after{
+  display: none;
+}
+
+/* 위로 올라가는 버튼 */
+#top{
+  display: block;
+  text-align: center;
+  background: #A451F7;
+  color: #ffc004;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all .3s ease-in-out;
+  position: fixed;
+  bottom: 3em;
+  right: 3em;
+  opacity: 0;
+  border: 1px solid #ffc004;
+  z-index: 20;
+}
+
+#top:hover{
+  padding: 10px;
+  box-shadow: 0 5px 5px rgba(0,0,0,.5);
+}
+
+#top.visible {
+  opacity: 1;
+}
+
+
+
+
+
+/* ======================
+          미디어쿼리
+========================*/
+@media screen and (max-width: 1180px){
+  
+  .tags .tags-top ul li:last-child{
+    display: none;
+  }
+  
+  /* 투데이북 */  
+  .lank_reco .lank{
+    width: 686px;
+  }
+
+  /* 신작 */
+  .new-look .new-book-cont{
+    width: 407.2px;
+  }
+
+  .new-book-cont .new-txt{
+    margin-left: 120px;
+  }
+
+  /* 태그들 */
+  .tags-list ul li:nth-child(4),
+  .tags-list ul li:nth-child(5),
+  .tags-list ul li:nth-child(6),
+  .tags-list ul li:nth-child(7){
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1080px){
+  .lank_reco .lank{
+    width: 100%;
+  }
+
+  /* editor's 추천 */
+  .lank_reco .editor{
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+  }
+
+  .editor .editor-wrap{
+    width: 23%;
+    float: left;
+    height: 182px;
+    margin-right: 10px;
+  }
+
+  .editor .editor-wrap:last-child{
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1016px){
+  /* editor's 추천 */
+  .editor .editor-wrap{
+    width: 48%;
+    float: left;
+    height: 182px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .editor .editor-wrap:nth-child(3),
+  .editor .editor-wrap:last-child{
+    display: none;
+  }
+
+  .today-book-wrap .today-s-wrap{
+    width: 35%;
+  }
+
+  .today-tab-wrap {
+    width: 65%;
+  }
+
+  .today-book-list .t_book {
+    width: 130px;
+  }
+
+  /* 슬라이드 글자 */
+  .swiper-slide .main-txt h2{
+    font-size: 32px;
+  }
+
+  /* 신작 */
+  .new-book-cont .new-poster{
+    left: 13px;
+  }
+
+  .new-book-cont .new-txt{
+    margin-left: 98px;
+  }
+}
+
+@media screen and (max-width: 964px){
+  .today-book-list .t_book{
+    margin-right: 15px;
+    width: 150px;
+  }
+
+  .today-tab-wrap {
+    width: 65%;
+  }  
+
+  /* 신작 */
+  .new-book-cont .new-poster{
+    width: 72px;
+    left: 9px;
+    top: 18px;
+  }
+
+  .new-book-cont .new-txt{
+    width: 200px;
+    margin-left: 78px;
+  }
+
+  .new-look .new-book-cont{
+    width: 313px;
+  }
+}
+
+@media screen and (max-width: 848px){
+  .today-book-wrap .today-s-wrap{
+    width: 50%;
+  }
+
+  .today-tab-wrap{
+    width: 50%;
+  }
+
+  /* 슬라이드 글씨 */
+  .swiper-slide .main-txt h2{
+    font-size: 25px;
+  }
+
+  .swiper-slide .main-txt p{
+    font-size: 15px;
+  }
+
+  .swiper-slide .main-txt a{
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 824px){
+
+  /* 검색창 */
+  header form input[type="text"]{
+    width: 400px;
+  }
+
+  .tags .tags-top ul li{
+    width: 120px;
+    height: 120px;
+  }
+
+  .tags-list ul li:nth-child(7){
+    display: none;
+  }
+}
+
+
+
+
+@media screen and (max-width: 780px){
+  /* 모바일 헤더 */
+  #header{
+    position: fixed;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    padding: 11px 0;
+    line-height: 42px;
+  }
+
+  #header .container{
+    height: 42px;
+  }
+
+  header form{
+    padding: 10px 0;
+  }
+
+
+  .toggle{display: block; float: right;}
+  .toggle:hover{
+    cursor: pointer;
+  }
+
+  .sub-nav li:first-child{
+    margin-left: -108px;
+  }
+
+  .sub-nav li:nth-child(2),
+  .sub-nav li:nth-child(3){
+    display: none;
+  }
+
+  .main-nav li{
+    width: 100%;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .main-nav li:last-child{
+    border: 0;
+  }
+
+  .main-nav{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    display: none;
+  }
+
+  .main-nav li:after{
+    display: none;
+  }
+
+
+
+
+  /* 신작 */
+  .new-look .new-book-cont{
+    width: 401px;
+  }
+
+  .new-book-cont .new-poster{
+    width: 84px;
+    top: 8px;
+  }
+
+  .new-book-cont .new-txt{
+    width: 270px;
+    margin-left: 106px;
+  }
+}
+
+@media screen and (max-width: 764px){
+  .today-book-wrap .today-s-wrap{
+    width: 100%;
+  }
+
+  .today-tab-wrap {
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 0;
+  }
+
+  .today-book-wrap{
+    margin-top: 50px;
+  }
+
+
+  /* editor's 추천 */
+  .editor .editor-wrap{
+    width: 100%;
+  }
+
+ 
+}
+
+@media screen and (max-width: 694px){
+  /* 슬라이드 글씨크기 */
+  .swiper-slide .main-txt h2{
+    font-size: 22px;
+  }
+
+  .swiper-slide .main-txt p{
+    font-size: 14px;
+  }
+
+  .swiper-slide .main-txt a{
+    font-size: 14px;
+  }
+
+  .swiper-slide .main-txt{
+    width: 60%;
+  }
+
+  .swiper-slide .main-txt{
+    background: rgba(255,255,255,.8);
+  }
+
+  /* 투데이 책 */
+  .today-book-list .t_book{
+    margin-right: 11px;
+    width: 132px;
+  }
+
+  .today-book-list .t_book:nth-child(4n){
+    margin-right: 11px;
+  }
+
+  /* 실시간 베스트 셀러 */
+  .lank .lank-tab-tit{
+    right: 16px;
+  }
+
+  .lank-tab th:nth-child(2),
+  .lank-tab td:nth-child(2){
+    display: none;
+  }
+
+  .lank-tab th:nth-child(3){
+    width: 110px;
+  }
+
+
+  .lank-tab th:nth-child(5){
+    width: 100px;
+  }
+
+
+  /* 랭킹 */
+  .langking{
+    height: 125px;
+  }
+
+  .lank-book .lank-book-img{
+    margin: 10px 50px;
+  }
+
+  .lank-book .lank-book-img img{
+    float: none;
+  }
+
+  .lank-book .lank-book-tit{
+    float: none;
+    margin: 0 auto;
+  }
+
+  .langking .hold{
+    padding: 7px 12px;
+  }
+
+  .langking .read{ /* 바로 읽기 */
+    padding: 7px 14px;
+  }
+
+
+  /* 태그 추천 */
+  .tag h2{
+    font-size: 23px;
+  }
+
+  .tag-wrap .tags{
+    width: 47.5%;
+    margin-right: 2.4%;
+    margin-bottom: 20px;
+  }
+
+  .tags .tags-top ul li{
+    width: 99px;
+    height: 99px;
+  }
+
+  /* 태그들 */
+  .tags-list ul li:nth-child(3),
+  .tags-list ul li:nth-child(4){
+    display: none;
+  }
+
+  .tags-title{
+    font-size: 16px;
+    height: 37px;
+  }
+
+  .tags-writer{
+    font-size: 14px;
+  }
+
+  /* 두번째 줄에 있던 것들 */
+  .tag_two{
+    margin-top: 0;
+  }
+
+  .tag-wrap .tags:nth-child(3n){
+    margin-right: 2.4%;
+  }
+
+
+  /* 푸터 메뉴 */
+  .footer-top{
+    margin-top: 50px;
+  }
+
+  .footer-bottom{
+    position: relative;
+    width: 100%;
+  }
+
+  .footer-bottom-menu{
+    float: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-bottom-top{
+    margin-top: 60px;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* 탑버튼 */
+  #top{
+    bottom: 1.5em;
+    right: 2em;
+  }
+
+}
